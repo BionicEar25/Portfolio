@@ -1,0 +1,14 @@
+# Minutes Hours DaysofMonth Month DaysoftheWeek
+# System Update
+* */6 * * /Documents/update.sh
+
+# Execute scripts
+0 0 1 * * /Documents/run_scripts.sh
+
+# Cleanup
+0 0 * * 0 /Documents/clean_db.sh
+
+# Backups
+0 0 * * 7 /Documents/backup.sh
+
+MAILTO = insertemailtosendto@email.com
