@@ -1,0 +1,23 @@
+#creating a timer in linux requires Unit, Timer, Instal#
+[Unit]
+Description=My Timer
+
+[Timer]
+#OnBootSec makes timer run at system boot, unit active makes script at regular intervals#
+OnBootSec=2min
+OnUnitActiveSec=2hour
+
+[Install]
+WantedBy=timers.target
+
+[Unit]
+Description=My Service
+
+[Service]
+ExecStart=/Documents/timerscript.sh
+
+[Install]
+WantedBy=multi-user.targer
+
+#after run following command#
+sudo systemctl daemon-reload; sudo systemctl start mytimer.service; sudo systemctl enable mytimer.service
